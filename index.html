@@ -1,0 +1,168 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+
+
+<html>
+    <head>
+        <meta http-equiv="Content-Language" content="es">
+        <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+        <link rel="stylesheet" type="text/css" href="css/estilos.css" />
+        
+
+    <title>Cuadro de Mandos</title>        
+               
+    </head>
+
+    
+ <body>
+
+
+    <script>
+
+
+        var nav4 = window.Event ? true : false;
+        function acceptNum(evt){
+            // NOTE: Backspace = 8, Enter = 13, '0' = 48, '9' = 57
+            var key = nav4 ? evt.which : evt.keyCode;
+            return (key <= 13 || (key >= 48 && key <= 57));
+        }
+        function checkNOrden() {
+            if (document.getElementById("norden").value == "") {
+                alert("No has completado todos los datos.");
+                return false;
+            } else {
+                return true;
+            }
+        }
+        function lanzo1(){
+            if( checkNOrden() ){
+                document.forms[0].action="https://mobility.ono.es/mobilidad/web/fecompatibility.jsp?pagina=fallida.jsp?";
+                document.forms[0].submit();
+            }
+            else return false;
+        }
+       //nuevo mensaje
+        function checkNOrden() {
+            if (document.getElementById("norden").value == "") {
+                alert("No has completado todos los datos.");
+                return false;
+            } 
+            else {
+                return true;
+            }
+        }
+        function lanzo2(){
+            if( checkNOrden() ){
+                document.forms[0].action="https://mobility.ono.es/mobilidad/web/nuevmensaje.jsp?";
+                document.forms[0].submit();
+            }
+            else return false;
+        }
+                //estado ot
+
+
+     function checkNOrden() {
+            if (document.getElementById("norden").value == "") {
+                alert("No has completado todos los datos.");
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        function lanzo3(){
+            document.forms[0].action="https://mobility.ono.es/mobilidad/web/festatus.jsp?";
+            document.forms[0].submit();
+        }
+
+
+                    //cierre con inc
+
+
+    function checkNOrden() {
+            if (document.getElementById("norden").value == "") {
+                alert("No has completado todos los datos.");
+                return false;
+            } else {
+                return true;
+            }
+        }
+        function lanzo4(){
+            if( checkNOrden() ){
+                document.forms[0].action="https://mobility.ono.es/mobilidad/web/fecompatibility.jsp?pagina=fecloseIncid1.jsp?";
+                document.forms[0].submit();
+            }
+            
+        }
+
+
+                    //PROVISIÓN OK
+
+
+        function checkNOrden() {
+            if (document.getElementById("norden").value == "") {
+                alert("No has completado todos los datos.");
+                return false;
+            } else {
+                return true;
+            }
+        }
+            function lanzo5(url){
+            if( checkNOrden() ){
+                document.forms[0].action="https://mobility.ono.es/mobilidad/web/fecompatibility.jsp?pagina=provisionok.jsp?";
+                document.forms[0].submit();
+            }
+            else return false;
+        }
+
+
+
+
+ </script>
+
+
+
+                 <form method="post" action=""target="_blank">
+                    <div alig="center" id="mainmenu">
+                      <table cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr><td colspan="2" class="title">Menu Principal</td></tr>
+
+
+<br><br>
+
+
+            <tr>
+                <td class="labeltext">N. Orden</td>
+            </tr>
+
+
+            
+            <tr>
+                <td><input name="norden" id="norden" size="8" maxlength="9" type="text" value="" onkeypress="return acceptNum(event)"></td>
+            </tr>
+            
+            
+            <tr><td><input style="width: 90%" type="button" onclick="return lanzo3();"  value="Solicitud estado"></input></td></tr>
+
+
+            <tr><td><input style="width: 90%" type="button" onclick="return lanzo1('fecompatibility.jsp?pagina=fallida.jsp');" value="Fallida"></td></tr>
+            
+            <tr><td><input style="width: 90%" type="button" onclick="return lanzo2('nuevmensaje.jsp');" value="Nuevo Mensaje"></td></tr>
+            
+            <td><input style="width: 90%" type="button" onclick="return lanzo4('fecompatibility.jsp?pagina=fecloseIncid1.jsp');" value="Cierre con Incidencia"></td>
+            
+            <tr><td><input style="width: 90%" type="button" onclick="return lanzo5('fecompatibility.jsp?pagina=provisionok.jsp');" value="Prov. OK Sº no funciona"></td></tr>
+        
+
+
+
+                            </tbody>
+                      </table>
+                  </div>
+            </form>
+   
+      </body>
+</html>
+
